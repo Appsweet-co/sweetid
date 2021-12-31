@@ -12,6 +12,8 @@
 
 ## Quick Start
 
+Import `sweetid()` directly into your projects.
+
 ```ts
 import {
   SweetId,
@@ -20,6 +22,13 @@ import {
 
 const id: SweetId = sweetid();
 // => CUXuq1
+```
+
+Or use it on the command line.
+
+```zsh
+deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts
+# buGdUo
 ```
 
 ## Details
