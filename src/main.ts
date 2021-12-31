@@ -1,19 +1,13 @@
-import { options } from "./const.ts";
-import { parse } from "../deps.ts";
-import { generate, getSize, isValid } from "./service.ts";
+import { SweetId, SweetIdSize } from "./const.ts";
+import { generate, getIdLength, isValid } from "./service.ts";
 
-const args = parse(Deno.args, options);
-
-function main(): string {
-  const size = getSize(args);
-  const id = generate(size);
+export function sweetid(size: SweetIdSize = "small"): SweetId {
+  const id = generate(getIdLength(size));
 
   if (isValid(id)) {
     console.log(id);
     return id;
   }
 
-  return main();
+  return sweetid(size);
 }
-
-main();
