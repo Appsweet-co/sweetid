@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/logo.svg" alt="Logo" height="150" width="auto" />
+  <img src="assets/readme/logo.png" alt="Logo" height="150" width="auto" />
 </p>
 
 <h1 align="center">Sweet ID</h1>
@@ -97,6 +97,6 @@ export function customSweetId(size: SweetIdSize = "medium"): SweetId {
 }
 ```
 
-***NOTE: `SweetId` is a
+_**NOTE: `SweetId` is a
 [flexible nominal type](https://spin.atomicobject.com/2018/01/15/typescript-flexible-nominal-typing/)
-and will play nicely with generic `string` types if needed.
+and plays nicely with generic `string` types if needed.**_
