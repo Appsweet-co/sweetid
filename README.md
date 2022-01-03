@@ -21,7 +21,7 @@
 Import `sweetid()` directly into your project.
 
 ```ts
-import { sweetid } from "https://deno.land/x/foo/bar/baz@v0.0.4/mod.ts";
+import { sweetid } from "https://deno.land/x/sweetid/mod.ts";
 
 sweetid();
 // => CUXuq1
@@ -30,7 +30,7 @@ sweetid();
 Or use Sweet ID in the command line.
 
 ```zsh
-deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts
+deno run https://deno.land/x/sweetid/mod.ts
 # buGdUo
 ```
 
@@ -67,16 +67,16 @@ Pass in the same `SweetIdSize` as an optional flag to set the output size on the
 command line.
 
 ```zsh
-deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --small || -s
+deno run https://deno.land/x/sweetid/mod.ts --small || -s
 # PLmh1V
 
-deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --medium || -m
+deno run https://deno.land/x/sweetid/mod.ts --medium || -m
 # so24iHcuI86i
 
-deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --long || -l
+deno run https://deno.land/x/sweetid/mod.ts --long || -l
 # lugJNFIFYYLWJ8SAnb
 
-deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --xlong || -x
+deno run https://deno.land/x/sweetid/mod.ts --xlong || -x
 # NsiHnUqK3cbADQ9cIzsi0Og0
 ```
 
