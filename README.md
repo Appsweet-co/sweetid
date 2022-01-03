@@ -5,26 +5,23 @@
 <h1 align="center">Sweet ID</h1>
 
 <p align="center">
-  <b>Alphanumeric, cryptographically secure IDs</b>
+  <b>Alphanumeric IDs, powered by Nano ID</b>
 </p>
 
 <br />
 
 ## Quick Start
 
-Import `sweetid()` directly into your projects.
+Import `sweetid()` directly into your project.
 
 ```ts
-import {
-  SweetId,
-  sweetid,
-} from "https://deno.land/x/foo/bar/baz@v0.0.4/mod.ts";
+import { sweetid } from "https://deno.land/x/foo/bar/baz@v0.0.4/mod.ts";
 
-const id: SweetId = sweetid();
+sweetid();
 // => CUXuq1
 ```
 
-Or use it on the command line.
+Or use Sweet ID in the command line.
 
 ```zsh
 deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts
@@ -33,19 +30,20 @@ deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts
 
 ## Details
 
-Use `sweetid()` to generate [cryptographically secure](#security) IDs with a
-length of 6, 12, 18, or 24 alphanumeric characters. IDs will always start with a
-letter of the alphabet. This means you can use them for HTML `id` attributes.
+We use [Nano ID](https://github.com/ai/nanoid) under the hood to guarantee
+high-quality, cryptographically secure IDs.
+
+Sweet ID are alphanumeric and always start with a letter.
 
 ## ID Length
 
+The `sweetid()` function generates IDs with a length 6, 12, 18, or 24
+characters. IDs are 6 characters long by default.
+
 Pass in an optional [`SweetIdSize`](./src/const.ts) as the first argument to set
-the output size of the ID. IDs are 6 characters long by default.
+the output size of the ID.
 
 ```ts
-sweetid();
-// => aklxIt
-
 sweetid("small" || "s");
 // => hBuWX4
 
@@ -59,7 +57,40 @@ sweetid("xlong" | "x");
 // => CYhSN6DvdNZajwKhDjmdFXAD
 ```
 
-## Security
+Pass in the same `SweetIdSize` as an optional flag to set the output size on the
+command line.
 
-We use [Nano ID](https://github.com/ai/nanoid) under the hood to guarantee
-high-quality, cryptographically secure IDs.
+```zsh
+deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --small || -s
+# PLmh1V
+
+deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --medium || -m
+# so24iHcuI86i
+
+deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --long || -l
+# lugJNFIFYYLWJ8SAnb
+
+deno run https://deno.land/x/foo/bar/baz@v0.0.4/cli.ts --xlong || -x
+# NsiHnUqK3cbADQ9cIzsi0Og0
+```
+
+## TypeScript Types
+
+Use [`SweetId`](src/const.ts) and [`SweetIdSize`](src/const.ts) to add type info
+to your project. This is great for things like custom wrapper functions.
+
+```ts
+import type {
+  SweetId,
+  SweetIdSize,
+} from "https://deno.land/x/foo/bar/baz@v0.0.4/mod.ts";
+import { sweetid } from "https://deno.land/x/foo/bar/baz@v0.0.4/mod.ts";
+
+export function customSweetId(size: SweetIdSize = "medium"): SweetId {
+  return sweetid(size);
+}
+```
+
+***NOTE: `SweetId` is a
+[flexible nominal type](https://spin.atomicobject.com/2018/01/15/typescript-flexible-nominal-typing/)
+and will play nicely with generic `string` types if needed.
