@@ -10,6 +10,12 @@
 
 <br />
 
+<p align="center">
+  <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Appsweet-co/sweetid?sort=semver&style=for-the-badge">
+</p>
+
+<br />
+
 ## Quick Start
 
 Import `sweetid()` directly into your project.
