@@ -86,11 +86,8 @@ Use [`SweetId`](src/const.ts) and [`SweetIdSize`](src/const.ts) to add type info
 to your project. This is great for things like custom wrapper functions.
 
 ```ts
-import type {
-  SweetId,
-  SweetIdSize,
-} from "https://deno.land/x/foo/bar/baz@v0.0.4/mod.ts";
-import { sweetid } from "https://deno.land/x/foo/bar/baz@v0.0.4/mod.ts";
+import type { SweetId, SweetIdSize } from "https://deno.land/x/sweetid/mod.ts";
+import { sweetid } from "https://deno.land/x/sweetid/mod.ts";
 
 export function customSweetId(size: SweetIdSize = "medium"): SweetId {
   return sweetid(size);
