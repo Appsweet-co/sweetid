@@ -18,7 +18,7 @@
 
 ## Quick Start
 
-Import `sweetid()` directly into your project.
+Import `mod.ts` directly into your project.
 
 ```ts
 import { sweetid } from "https://deno.land/x/sweetid/mod.ts";
@@ -39,7 +39,7 @@ deno run https://deno.land/x/sweetid/cli.ts
 We use [Nano ID](https://github.com/ai/nanoid) under the hood to guarantee
 high-quality, cryptographically secure IDs.
 
-Sweet ID are alphanumeric and always start with a letter.
+Sweet IDs are alphanumeric and always start with a letter.
 
 ## ID Length
 
@@ -50,7 +50,7 @@ Pass in an optional [`SweetIdSize`](./src/const.ts) as the first argument to set
 the output size of the ID.
 
 ```ts
-sweetid("small" || "s");
+sweetid("short" || "s");
 // => hBuWX4
 
 sweetid("medium" || "m");
@@ -67,7 +67,7 @@ Pass in the same `SweetIdSize` as an optional flag to set the output size on the
 command line.
 
 ```zsh
-deno run https://deno.land/x/sweetid/cli.ts --small || -s
+deno run https://deno.land/x/sweetid/cli.ts --short || -s
 # PLmh1V
 
 deno run https://deno.land/x/sweetid/cli.ts --medium || -m
