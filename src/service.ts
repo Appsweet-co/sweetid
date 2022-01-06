@@ -12,7 +12,7 @@ export function isValid(id: SweetId): boolean {
 export function getIdLength(size: SweetIdSize): number {
   const BLOCK_SIZE = 6;
 
-  if (size === "small" || size === "s") return BLOCK_SIZE * 1;
+  if (size === "short" || size === "s") return BLOCK_SIZE * 1;
   if (size === "medium" || size === "m") return BLOCK_SIZE * 2;
   if (size === "long" || size === "l") return BLOCK_SIZE * 3;
   if (size === "xlong" || size === "x") return BLOCK_SIZE * 4;
@@ -21,10 +21,10 @@ export function getIdLength(size: SweetIdSize): number {
 }
 
 export function getSizeString(args: Sizes | Args): SweetIdSize {
-  if (args.small) return "small";
+  if (args.small) return "short";
   if (args.medium) return "medium";
   if (args.long) return "long";
   if (args.xlong) return "xlong";
 
-  return "small";
+  return "short";
 }

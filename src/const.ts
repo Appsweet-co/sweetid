@@ -5,7 +5,7 @@ export type SweetId = string & {
 };
 
 export type SweetIdSize =
-  | "small"
+  | "short"
   | "medium"
   | "long"
   | "xlong"
@@ -21,7 +21,7 @@ export const enum CharSets {
 }
 
 export interface Sizes extends Args {
-  small: boolean;
+  short: boolean;
   medium: boolean;
   long: boolean;
   xlong: boolean;
@@ -29,7 +29,7 @@ export interface Sizes extends Args {
 
 export const options: ArgParsingOptions = {
   alias: {
-    small: "s",
+    short: "s",
     medium: "m",
     long: "l",
     xlong: "x",
