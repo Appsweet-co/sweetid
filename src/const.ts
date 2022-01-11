@@ -21,6 +21,7 @@ export const enum CharSets {
 }
 
 export interface Sizes extends Args {
+  count: number;
   short: boolean;
   medium: boolean;
   long: boolean;
@@ -29,9 +30,14 @@ export interface Sizes extends Args {
 
 export const options: ArgParsingOptions = {
   alias: {
+    count: "c",
     short: "s",
     medium: "m",
     long: "l",
     xlong: "x",
+  },
+
+  default: {
+    count: 1,
   },
 };

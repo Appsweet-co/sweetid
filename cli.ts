@@ -6,5 +6,8 @@ import { getSizeString } from "./src/service.ts";
 const args = parse(Deno.args, options);
 
 const size = getSizeString(args);
+const { count } = args;
 
-sweetid(size);
+for (let i = count; i > 0; i--) {
+  console.log(sweetid(size));
+}

@@ -80,6 +80,23 @@ deno run https://deno.land/x/sweetid/cli.ts --xlong || -x
 # NsiHnUqK3cbADQ9cIzsi0Og0
 ```
 
+## Generate Multiple IDs
+
+Use the `--count <NUMBER>` (`-c <NUMBER>`) flag on the command line to generate
+multiple IDs of the same length.
+
+```zsh
+deno run https://deno.land/x/sweetid/cli.ts --count 3 || -c 3
+# hrWYHA
+# GlTos0
+# YRH3Xe
+
+deno run https://deno.land/x/sweetid/cli.ts --medium --count 3 || -m -c 3
+# C71kkaC0BRSn
+# CkBfX6pEjPDL
+# siQRcoFa8fTz
+```
+
 ## TypeScript Types
 
 Use [`SweetId`](src/const.ts) and [`SweetIdSize`](src/const.ts) to add type info
