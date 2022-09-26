@@ -1,18 +1,20 @@
-import { ArgParsingOptions, Args } from "../deps.ts";
+import { ArgParsingOptions } from "../deps.ts";
 
 export type SweetId = string & {
   __flavor?: "SweetId";
 };
 
 export type SweetIdSize =
+  | "xshort"
   | "short"
   | "medium"
   | "long"
   | "xlong"
+  | "xs"
   | "s"
   | "m"
   | "l"
-  | "x";
+  | "xl";
 
 export const enum CharSets {
   Alphanumeric =
@@ -20,24 +22,14 @@ export const enum CharSets {
   Decimal = "0123456789",
 }
 
-export interface Sizes extends Args {
-  count: number;
-  short: boolean;
-  medium: boolean;
-  long: boolean;
-  xlong: boolean;
-}
-
 export const options: ArgParsingOptions = {
   alias: {
     count: "c",
-    short: "s",
-    medium: "m",
-    long: "l",
-    xlong: "x",
+    size: "s",
   },
 
   default: {
     count: 1,
+    size: "xshort",
   },
 };
