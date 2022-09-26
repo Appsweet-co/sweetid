@@ -43,41 +43,47 @@ Sweet IDs are alphanumeric and always start with a letter.
 
 ## ID Length
 
-The `sweetid()` function generates IDs with a length 6, 12, 18, or 24
+The `sweetid()` function generates IDs with a length 6, 12, 18, 24, or 30
 characters. IDs are 6 characters long by default.
 
 Pass in an optional [`SweetIdSize`](./src/const.ts) as the first argument to set
 the output size of the ID.
 
 ```ts
-sweetid("short" || "s");
+sweetid("xshort" || "xs");
 // => hBuWX4
 
+sweetid("short" || "s");
+// => Wquah5yfIIzR
+
 sweetid("medium" || "m");
-// => b1eOHzXq6iK0
+// => Hk1vsftT8rC8nHcMqD
 
 sweetid("long" || "l");
-// => Rk3ulcSjeoyigV1zYn
+// => wUKmpxmz0Ev6IdRK69vbMPns
 
-sweetid("xlong" | "x");
-// => CYhSN6DvdNZajwKhDjmdFXAD
+sweetid("xlong" | "xl");
+// => bdbXvHTcA1en402e9D5RYpg07hCOU1
 ```
 
-Pass in the same `SweetIdSize` as an optional flag to set the output size on the
-command line.
+Use the `--size <SweetIdSize>` (`-s <SweetIdSize>`) flag on the command line to
+set the output size.
 
 ```zsh
-deno run https://deno.land/x/sweetid/cli.ts --short || -s
-# PLmh1V
+deno run https://deno.land/x/sweetid/cli.ts -s xs
+# nzcXUU
 
-deno run https://deno.land/x/sweetid/cli.ts --medium || -m
-# so24iHcuI86i
+deno run https://deno.land/x/sweetid/cli.ts -s s
+# wBHhb5CmSlem
 
-deno run https://deno.land/x/sweetid/cli.ts --long || -l
-# lugJNFIFYYLWJ8SAnb
+deno run https://deno.land/x/sweetid/cli.ts -s m
+# ZZUlWbUtFCsX6BLnCK
 
-deno run https://deno.land/x/sweetid/cli.ts --xlong || -x
-# NsiHnUqK3cbADQ9cIzsi0Og0
+deno run https://deno.land/x/sweetid/cli.ts -s l
+# lKhy2y9DueKPgqZLEQ0r09XP
+
+deno run https://deno.land/x/sweetid/cli.ts -s xl
+# ogpGsLiLQGwS4SccP4C7ID1tArzTCF
 ```
 
 ## Generate Multiple IDs
@@ -86,15 +92,15 @@ Use the `--count <NUMBER>` (`-c <NUMBER>`) flag on the command line to generate
 multiple IDs of the same length.
 
 ```zsh
-deno run https://deno.land/x/sweetid/cli.ts --count 3 || -c 3
-# hrWYHA
-# GlTos0
-# YRH3Xe
+deno run https://deno.land/x/sweetid/cli.ts -c 3
+# l3V2WTtbEeCs
+# Co0qj9SvlsSl
+# dEeTjgqAajnp
 
-deno run https://deno.land/x/sweetid/cli.ts --medium --count 3 || -m -c 3
-# C71kkaC0BRSn
-# CkBfX6pEjPDL
-# siQRcoFa8fTz
+deno run https://deno.land/x/sweetid/cli.ts -s m -c 3
+# ZTBMGbJsyf7CGKRkEf
+# les3F2W2EpGe7hr1iM
+# EzUQIgK6J7IhZstuzp
 ```
 
 ## TypeScript Types
@@ -106,7 +112,7 @@ to your project. This is great for things like custom wrapper functions.
 import type { SweetId, SweetIdSize } from "https://deno.land/x/sweetid/mod.ts";
 import { sweetid } from "https://deno.land/x/sweetid/mod.ts";
 
-export function customSweetId(size: SweetIdSize = "medium"): SweetId {
+export function customSweetId(size: SweetIdSize = "long"): SweetId {
   return sweetid(size);
 }
 ```
