@@ -50,7 +50,7 @@ Pass in an optional [`SweetIdSize`](./src/const.ts) as the first argument to set
 the output size of the ID.
 
 ```ts
-sweetid("xshort" || "xs");
+sweetid("short" || "s");
 // => MkSofu
 
 sweetid("medium" || "m");
