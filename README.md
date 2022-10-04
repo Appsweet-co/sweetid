@@ -43,7 +43,7 @@ Sweet IDs are alphanumeric and always start with a letter.
 
 ## ID Length
 
-The `sweetid()` function generates IDs with a length 6, 12, 18, 24, or 30
+The `sweetid()` function generates IDs with a length 6, 12, 24, or 48
 characters. IDs are 6 characters long by default.
 
 Pass in an optional [`SweetIdSize`](./src/const.ts) as the first argument to set
@@ -51,39 +51,33 @@ the output size of the ID.
 
 ```ts
 sweetid("xshort" || "xs");
-// => hBuWX4
-
-sweetid("short" || "s");
-// => Wquah5yfIIzR
+// => MkSofu
 
 sweetid("medium" || "m");
-// => Hk1vsftT8rC8nHcMqD
+// => bzAuoVKRo1rJ
 
 sweetid("long" || "l");
-// => wUKmpxmz0Ev6IdRK69vbMPns
+// => XGPCQUqrEVMzMyaU4V52u1LQ
 
 sweetid("xlong" | "xl");
-// => bdbXvHTcA1en402e9D5RYpg07hCOU1
+// => dRjFNY7TrZFqizgKLBwWXAQSErCk51gheMFlBNVAZFM5DuLr
 ```
 
 Use the `--size <SweetIdSize>` (`-s <SweetIdSize>`) flag on the command line to
 set the output size.
 
 ```zsh
-deno run https://deno.land/x/sweetid/cli.ts -s xs
-# nzcXUU
-
 deno run https://deno.land/x/sweetid/cli.ts -s s
-# wBHhb5CmSlem
+# HrcZ9u
 
 deno run https://deno.land/x/sweetid/cli.ts -s m
-# ZZUlWbUtFCsX6BLnCK
+# s75rHr14EJYJ
 
 deno run https://deno.land/x/sweetid/cli.ts -s l
-# lKhy2y9DueKPgqZLEQ0r09XP
+# rCJLcqqHW4yuvsSeGPH4INok
 
 deno run https://deno.land/x/sweetid/cli.ts -s xl
-# ogpGsLiLQGwS4SccP4C7ID1tArzTCF
+# hMASSfdHZDbpZFHL2UZFWEduk6Ltt5OcxaidVcxXU1K0cyyD
 ```
 
 ## Generate Multiple IDs
@@ -93,14 +87,14 @@ multiple IDs of the same length.
 
 ```zsh
 deno run https://deno.land/x/sweetid/cli.ts -c 3
-# l3V2WTtbEeCs
-# Co0qj9SvlsSl
-# dEeTjgqAajnp
+# B4a6Xc
+# uRYkkT
+# NJZtjW
 
-deno run https://deno.land/x/sweetid/cli.ts -s m -c 3
-# ZTBMGbJsyf7CGKRkEf
-# les3F2W2EpGe7hr1iM
-# EzUQIgK6J7IhZstuzp
+deno run https://deno.land/x/sweetid/cli.ts -s l -c 3
+# hxzRSWPX5TDcQieHk2B7fPkA
+# LXaAyksi6d3HgCAyw2Y4EKM8
+# sZhCDNUjQRJzptbNqGco1HdL
 ```
 
 ## TypeScript Types
