@@ -4,23 +4,26 @@ export type SweetId = string & {
   __flavor?: "SweetId";
 };
 
-export type SweetIdSize =
-  | "xshort"
-  | "short"
-  | "medium"
-  | "long"
-  | "xlong"
-  | "xs"
-  | "s"
-  | "m"
-  | "l"
-  | "xl";
+export const BLOCK_SIZE = 6;
 
-export const enum CharSets {
-  Alphanumeric =
+export const BlockCount = {
+  short: 1,
+  s: 1,
+  medium: 2,
+  m: 2,
+  long: 4,
+  l: 4,
+  xlong: 8,
+  xl: 8,
+} as const;
+
+export type SweetIdSize = keyof typeof BlockCount;
+
+export const CharSets = {
+  Alphanumeric:
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-  Decimal = "0123456789",
-}
+  Decimal: "0123456789",
+} as const;
 
 export const options: ArgParsingOptions = {
   alias: {
@@ -30,6 +33,6 @@ export const options: ArgParsingOptions = {
 
   default: {
     count: 1,
-    size: "xshort",
+    size: "short",
   },
 };
