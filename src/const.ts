@@ -1,4 +1,4 @@
-import { ArgParsingOptions } from "../deps.ts";
+import { ParseOptions } from "../deps.ts";
 
 export type SweetId = string & {
   __flavor?: "SweetId";
@@ -25,7 +25,7 @@ export const CharSets = {
   Decimal: "0123456789",
 } as const;
 
-export const options: ArgParsingOptions = {
+export const options: ParseOptions = {
   alias: {
     count: "c",
     size: "s",
