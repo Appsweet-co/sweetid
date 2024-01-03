@@ -11,7 +11,7 @@ export function generate(length: number): SweetId {
   return customAlphabet(CharSets.Alphanumeric, length)();
 }
 
-export function isValid(id: SweetId): boolean {
+export function validate(id: SweetId): boolean {
   return !CharSets.Decimal.split("").some((item) => id[0] === item);
 }
 
