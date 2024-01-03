@@ -1,7 +1,9 @@
 import { ParseOptions } from "../deps.ts";
 
+const FLAVOR = Symbol('FLAVOR');
+
 export type SweetId = string & {
-  __flavor?: "SweetId";
+  [FLAVOR]?: "SweetId";
 };
 
 export const BLOCK_SIZE = 6;
