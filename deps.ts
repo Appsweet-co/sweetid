@@ -1,6 +1,6 @@
-export type {
-  ParseOptions,
-  Args,
-} from "https://deno.land/std@0.209.0/flags/mod.ts";
+export type { 
+  Args, 
+  ParseOptions 
+} from "https://deno.land/std@0.220.1/flags/mod.ts";
 export { customAlphabet } from "https://deno.land/x/nanoid@v3.0.0/mod.ts";
-export { parse } from "https://deno.land/std@0.209.0/flags/mod.ts";
+export { parse } from "https://deno.land/std@0.220.1/flags/mod.ts";
