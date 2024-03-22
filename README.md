@@ -36,54 +36,55 @@ deno run https://deno.land/x/sweetid/cli.ts
 
 ## Details
 
-We use [Nano ID](https://github.com/ai/nanoid) under the hood to guarantee
-high-quality, cryptographically secure IDs.
+We use [Nano ID](https://github.com/ai/nanoid) under the hood to guarantee high-quality, cryptographically secure IDs.
 
 Sweet IDs are alphanumeric and always start with a letter.
 
 ## ID Length
 
-The `sweetid()` function generates IDs with a length 6, 12, 24, or 48
-characters. IDs are 6 characters long by default.
+The `sweetid()` function generates IDs with a length 6, 12, 24, 48, or 96 characters. IDs are 6 characters long by default.
 
-Pass in an optional [`SweetIdSize`](./src/const.ts) as the first argument to set
-the output size of the ID.
+Pass in an optional [`SweetIdSize`](./src/const.ts) as the first argument to set the output size of the ID.
 
 ```ts
-sweetid("short" || "s");
+sweetid("xshort" || "xs");
 // => MkSofu
 
-sweetid("medium" || "m");
+sweetid("short" || "s");
 // => bzAuoVKRo1rJ
 
-sweetid("long" || "l");
+sweetid("medium" || "m");
 // => XGPCQUqrEVMzMyaU4V52u1LQ
 
-sweetid("xlong" | "xl");
+sweetid("long" || "l");
 // => dRjFNY7TrZFqizgKLBwWXAQSErCk51gheMFlBNVAZFM5DuLr
+
+sweetid("xlong" || "xl");
+// => wMoHhg2g2YXqYelDScehIMirOQrEzTPvOI0xqSUXmChqNwHjZQ5kIDTW1f4vjwFIbNt8X6Bzmmz6gEYUQtPuKb9y6u2B4ODE
 ```
 
-Use the `--size <SweetIdSize>` (`-s <SweetIdSize>`) flag on the command line to
-set the output size.
+Use the `--size <SweetIdSize>` (`-s <SweetIdSize>`) flag on the command line to set the output size.
 
 ```zsh
-deno run https://deno.land/x/sweetid/cli.ts -s s
+deno run https://deno.land/x/sweetid/cli.ts -s xs
 # HrcZ9u
 
-deno run https://deno.land/x/sweetid/cli.ts -s m
+deno run https://deno.land/x/sweetid/cli.ts -s s
 # s75rHr14EJYJ
 
-deno run https://deno.land/x/sweetid/cli.ts -s l
+deno run https://deno.land/x/sweetid/cli.ts -s m
 # rCJLcqqHW4yuvsSeGPH4INok
 
-deno run https://deno.land/x/sweetid/cli.ts -s xl
+deno run https://deno.land/x/sweetid/cli.ts -s l
 # hMASSfdHZDbpZFHL2UZFWEduk6Ltt5OcxaidVcxXU1K0cyyD
+
+deno run https://deno.land/x/sweetid/cli.ts -s xl
+# Pzw55DDYGgHE3fGAzGUK7X9MUYizwaGA0vcqVbaYKOce5ij1aRBediwgc1OnRZNjR5u5RKLi7vuonxU1adiAIc2yETrLOyn6
 ```
 
 ## Generate Multiple IDs
 
-Use the `--count <NUMBER>` (`-c <NUMBER>`) flag on the command line to generate
-multiple IDs of the same length.
+Use the `--count <NUMBER>` (`-c <NUMBER>`) flag on the command line to generate multiple IDs of the same length.
 
 ```zsh
 deno run https://deno.land/x/sweetid/cli.ts -c 3
@@ -91,7 +92,7 @@ deno run https://deno.land/x/sweetid/cli.ts -c 3
 # uRYkkT
 # NJZtjW
 
-deno run https://deno.land/x/sweetid/cli.ts -s l -c 3
+deno run https://deno.land/x/sweetid/cli.ts -s m -c 3
 # hxzRSWPX5TDcQieHk2B7fPkA
 # LXaAyksi6d3HgCAyw2Y4EKM8
 # sZhCDNUjQRJzptbNqGco1HdL
