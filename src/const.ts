@@ -9,21 +9,22 @@ export type SweetId = string & {
 export const BLOCK_SIZE = 6;
 
 export const BlockCount = {
-  short: 1,
-  s: 1,
-  medium: 2,
-  m: 2,
-  long: 4,
-  l: 4,
-  xlong: 8,
-  xl: 8,
+  xshort: 1,
+  xs: 1,
+  short: 2,
+  s: 2,
+  medium: 4,
+  m: 4,
+  long: 8,
+  l: 8,
+  xlong: 16,
+  xl: 16,
 } as const;
 
 export type SweetIdSize = keyof typeof BlockCount;
 
 export const CharSets = {
-  Alphanumeric:
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+  Alphanumeric: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
   Decimal: "0123456789",
 } as const;
 
@@ -35,6 +36,6 @@ export const options: ParseOptions = {
 
   default: {
     count: 1,
-    size: "short",
+    size: "xshort",
   },
 };

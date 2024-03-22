@@ -1,5 +1,5 @@
 import { customAlphabet } from "../deps.ts";
-import { BLOCK_SIZE, BlockCount, CharSets, SweetId, SweetIdSize } from "./const.ts";
+import { BLOCK_SIZE, BlockCount, CharSets, type SweetId, type SweetIdSize } from "./const.ts";
 
 export function generate(length: number): SweetId {
   return customAlphabet(CharSets.Alphanumeric, length)();
@@ -10,5 +10,5 @@ export function validate(id: SweetId): boolean {
 }
 
 export function getIdLength(size: SweetIdSize): number {
-  return BlockCount[size] ? BLOCK_SIZE * BlockCount[size] : BLOCK_SIZE;
+  return (BlockCount[size] ?? 1) * BLOCK_SIZE;
 }
