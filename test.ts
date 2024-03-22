@@ -1,4 +1,4 @@
-import { assertStrictEquals } from "https://deno.land/std@0.120.0/testing/asserts.ts";
+import { assertStrictEquals } from "https://deno.land/std@0.220.1/testing/asserts.ts";
 import { sweetid, SweetIdSize } from "./mod.ts";
 
 const tests = [
