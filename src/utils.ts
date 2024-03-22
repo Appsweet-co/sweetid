@@ -1,11 +1,5 @@
 import { customAlphabet } from "../deps.ts";
-import {
-  BLOCK_SIZE,
-  BlockCount,
-  CharSets,
-  SweetId,
-  SweetIdSize,
-} from "./const.ts";
+import { BLOCK_SIZE, BlockCount, CharSets, SweetId, SweetIdSize } from "./const.ts";
 
 export function generate(length: number): SweetId {
   return customAlphabet(CharSets.Alphanumeric, length)();
