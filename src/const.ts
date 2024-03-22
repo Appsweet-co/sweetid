@@ -29,6 +29,8 @@ export const CharSets = {
 } as const;
 
 export const options: ParseOptions = {
+  boolean: ['help'],
+
   alias: {
     count: "c",
     size: "s",
@@ -38,4 +40,13 @@ export const options: ParseOptions = {
     count: 1,
     size: "xshort",
   },
+
+  unknown: () => {
+    console.log(USAGE);
+    Deno.exit(1);
+  }
 };
+
+export const USAGE = `
+See https://deno.land/x/sweetid for details.
+`;
